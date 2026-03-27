@@ -1,70 +1,27 @@
-import csv
-import re
-import sqlite3
+import logging
 import time
-from dataclasses import dataclass, asdict
-from typing import List, Dict
+from typing import Dict, List
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
+from webdriver_manager.chrome import ChromeDriverManager
+
+from .config import INDEX_URL, HEADLESS, PAGE_LOAD_SLEEP, DETAIL_PAGE_SLEEP
+from .models import FacultyRecord
+from .utils import (
+    clean_text,
+    normalize_email,
+    normalize_phone,
+    split_department_label,
+    parse_name_line,
+    extract_labeled_value,
+)
 
 
-BASE_URL = "https://ee.yonsei.ac.kr"
-INDEX_URL = f"{BASE_URL}/faculty/dep_search.do"
-
-
-@dataclass
-class FacultyRecord:
-    college_ko: str = ""
-    college_en: str = ""
-    department_ko: str = ""
-    department_en: str = ""
-    campus: str = ""
-    name_ko: str = ""
-    name_en: str = ""
-    title_ko: str = ""
-    email: str = ""
-    phone: str = ""
-    office: str = ""
-    detail_url: str = ""
-    source_department_url: str = ""
-
-
-def clean_text(v: str) -> str:
-    if not v:
-        return ""
-    return re.sub(r"\s+", " ", v).strip()
-
-
-def normalize_email(v: str) -> str:
-    v = clean_text(v).upper()
-    if not v:
-        return ""
-    v = v.replace("@YUHS.AC@YONSEI.AC.KR", "@YUHS.AC.KR")
-    v = v.replace("@YONSEI.AC@YONSEI.AC.KR", "@YONSEI.AC.KR")
-    v = v.replace(" ", "").replace(";", "").replace(",", "")
-    return v
-
-
-def normalize_phone(v: str) -> str:
-    v = clean_text(v)
-    if not v:
-        return ""
-    m = re.search(r"(\+?\d[\d\-\)\(\s]{6,}\d)", v)
-    return clean_text(m.group(1)) if m else v
-
-
-def split_department_label(label: str):
-    parts = [clean_text(x) for x in label.split("/") if clean_text(x)]
-    if len(parts) >= 2:
-        return parts[0], parts[1]
-    return label, ""
-
-
-def make_driver(headless: bool = True):
+def make_driver(headless: bool = HEADLESS):
     options = Options()
     if headless:
         options.add_argument("--headless=new")
@@ -76,19 +33,26 @@ def make_driver(headless: bool = True):
         "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
     )
-    driver = webdriver.Chrome(options=options)
+
+    driver_path = ChromeDriverManager().install()
+
+    # webdriver-manager가 간혹 THIRD_PARTY_NOTICES.chromedriver를 반환하는 문제 회피
+    if driver_path.endswith("THIRD_PARTY_NOTICES.chromedriver"):
+        driver_path = driver_path.replace("THIRD_PARTY_NOTICES.chromedriver", "chromedriver.exe")
+
+    service = Service(driver_path)
+    driver = webdriver.Chrome(service=service, options=options)
     driver.implicitly_wait(5)
     return driver
 
-
-def get_page_soup(driver, url: str, sleep_sec: float = 1.0) -> BeautifulSoup:
+def get_page_soup(driver, url: str, sleep_sec: float) -> BeautifulSoup:
     driver.get(url)
     time.sleep(sleep_sec)
     return BeautifulSoup(driver.page_source, "html.parser")
 
 
 def parse_index_for_medicine_departments(driver) -> List[Dict[str, str]]:
-    soup = get_page_soup(driver, INDEX_URL, sleep_sec=1.2)
+    soup = get_page_soup(driver, INDEX_URL, PAGE_LOAD_SLEEP)
     departments = []
     seen = set()
 
@@ -116,33 +80,11 @@ def parse_index_for_medicine_departments(driver) -> List[Dict[str, str]]:
     return departments
 
 
-def parse_name_line(line: str):
-    line = clean_text(line)
-    if not line:
-        return "", ""
-
-    m = re.match(r"^([가-힣·\s]+)\s+([A-Za-z][A-Za-z ,.'\-]*)$", line)
-    if m:
-        return clean_text(m.group(1)), clean_text(m.group(2))
-
-    if re.search(r"[가-힣]", line) and not re.search(r"[A-Za-z]", line):
-        return line, ""
-    if re.search(r"[A-Za-z]", line) and not re.search(r"[가-힣]", line):
-        return "", line
-
-    return line, ""
-
-
-def extract_labeled_value(text: str, label: str) -> str:
-    m = re.search(rf"{re.escape(label)}\s*:\s*(.+)", text, flags=re.IGNORECASE)
-    return clean_text(m.group(1)) if m else ""
-
-
 def enrich_record_from_detail(driver, record: FacultyRecord):
     if not record.detail_url:
         return
 
-    soup = get_page_soup(driver, record.detail_url, sleep_sec=0.8)
+    soup = get_page_soup(driver, record.detail_url, DETAIL_PAGE_SLEEP)
     text = clean_text(soup.get_text("\n", strip=True))
 
     detail_email = normalize_email(extract_labeled_value(text, "E-mail"))
@@ -163,7 +105,7 @@ def enrich_record_from_detail(driver, record: FacultyRecord):
         record.department_en = detail_dept
 
     for line in [clean_text(x) for x in soup.stripped_strings]:
-        if re.search(r"[가-힣]", line) and re.search(r"[A-Za-z]", line):
+        if any(ch.isalpha() for ch in line) and any("\uac00" <= ch <= "\ud7a3" for ch in line):
             nk, ne = parse_name_line(line)
             if nk and not record.name_ko:
                 record.name_ko = nk
@@ -173,7 +115,7 @@ def enrich_record_from_detail(driver, record: FacultyRecord):
 
 
 def parse_department_page(driver, dept_meta: Dict[str, str]) -> List[FacultyRecord]:
-    soup = get_page_soup(driver, dept_meta["department_url"], sleep_sec=1.0)
+    soup = get_page_soup(driver, dept_meta["department_url"], PAGE_LOAD_SLEEP)
     records = []
     seen_detail = set()
 
@@ -191,7 +133,7 @@ def parse_department_page(driver, dept_meta: Dict[str, str]) -> List[FacultyReco
             name_ko, name_en, title_ko, email, campus = "", "", "", "", ""
 
             for line in lines:
-                if re.search(r"[가-힣]", line) and re.search(r"[A-Za-z]", line):
+                if any(ch.isalpha() for ch in line) and any("\uac00" <= ch <= "\ud7a3" for ch in line):
                     nk, ne = parse_name_line(line)
                     if nk or ne:
                         name_ko, name_en = nk, ne
@@ -222,7 +164,7 @@ def parse_department_page(driver, dept_meta: Dict[str, str]) -> List[FacultyReco
             try:
                 enrich_record_from_detail(driver, rec)
             except Exception as e:
-                print(f"[WARN] detail parse failed: {detail_url} | {e}")
+                logging.warning("detail parse failed: %s | %s", detail_url, e)
 
             records.append(rec)
 
@@ -243,88 +185,27 @@ def deduplicate(records: List[FacultyRecord]) -> List[FacultyRecord]:
     return list(result.values())
 
 
-def create_db(db_path="yonsei_medicine_faculty.db"):
-    conn = sqlite3.connect(db_path)
-    cur = conn.cursor()
-    cur.execute("""
-        CREATE TABLE IF NOT EXISTS faculty (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            college_ko TEXT,
-            college_en TEXT,
-            department_ko TEXT,
-            department_en TEXT,
-            campus TEXT,
-            name_ko TEXT,
-            name_en TEXT,
-            title_ko TEXT,
-            email TEXT,
-            phone TEXT,
-            office TEXT,
-            detail_url TEXT UNIQUE,
-            source_department_url TEXT
-        )
-    """)
-    conn.commit()
-    return conn
-
-
-def save_to_db(conn, records: List[FacultyRecord]):
-    cur = conn.cursor()
-    for r in records:
-        cur.execute("""
-            INSERT OR REPLACE INTO faculty (
-                college_ko, college_en, department_ko, department_en, campus,
-                name_ko, name_en, title_ko, email, phone, office,
-                detail_url, source_department_url
-            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (
-            r.college_ko, r.college_en, r.department_ko, r.department_en, r.campus,
-            r.name_ko, r.name_en, r.title_ko, r.email, r.phone, r.office,
-            r.detail_url, r.source_department_url
-        ))
-    conn.commit()
-
-
-def save_to_csv(records: List[FacultyRecord], csv_path="yonsei_medicine_faculty.csv"):
-    rows = [asdict(r) for r in records]
-    if not rows:
-        return
-
-    with open(csv_path, "w", newline="", encoding="utf-8-sig") as f:
-        writer = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
-        writer.writeheader()
-        writer.writerows(rows)
-
-
-def crawl():
-    driver = make_driver(headless=True)
-    conn = create_db()
-
+def crawl_all() -> List[FacultyRecord]:
+    driver = make_driver()
     try:
         departments = parse_index_for_medicine_departments(driver)
-        print(f"[INFO] departments found: {len(departments)}")
+        logging.info("departments found: %d", len(departments))
 
         all_records = []
         for i, dept in enumerate(departments, start=1):
-            print(f"[INFO] [{i}/{len(departments)}] {dept['department_ko']} / {dept['department_en']}")
+            logging.info(
+                "[%d/%d] %s / %s",
+                i,
+                len(departments),
+                dept["department_ko"],
+                dept["department_en"],
+            )
             try:
                 records = parse_department_page(driver, dept)
                 all_records.extend(records)
             except Exception as e:
-                print(f"[WARN] department failed: {dept['department_url']} | {e}")
+                logging.warning("department failed: %s | %s", dept["department_url"], e)
 
-        all_records = deduplicate(all_records)
-        save_to_db(conn, all_records)
-        save_to_csv(all_records)
-
-        print(f"[INFO] total records: {len(all_records)}")
-        print("[INFO] saved: yonsei_medicine_faculty.db")
-        print("[INFO] saved: yonsei_medicine_faculty.csv")
-
+        return deduplicate(all_records)
     finally:
-        conn.close()
         driver.quit()
-
-
-if __name__ == "__main__":
-    crawl()

@@ -1,0 +1,80 @@
+2026-03-28 06:34:02,740 | INFO | crawler started
+2026-03-28 06:34:02,741 | INFO | ====== WebDriver manager ======
+2026-03-28 06:34:04,547 | INFO | Get LATEST chromedriver version for google-chrome
+2026-03-28 06:34:05,152 | INFO | Get LATEST chromedriver version for google-chrome
+2026-03-28 06:34:05,701 | INFO | There is no [win64] chromedriver "146.0.7680.165" for browser google-chrome "146.0.7680" in cache
+2026-03-28 06:34:05,701 | INFO | Get LATEST chromedriver version for google-chrome
+2026-03-28 06:34:06,973 | INFO | WebDriver version 146.0.7680.165 selected
+2026-03-28 06:34:06,981 | INFO | Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/146.0.7680.165/win32/chromedriver-win32.zip
+2026-03-28 06:34:06,983 | INFO | About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/146.0.7680.165/win32/chromedriver-win32.zip
+2026-03-28 06:34:07,576 | INFO | Driver downloading response is 200
+2026-03-28 06:34:10,848 | INFO | Get LATEST chromedriver version for google-chrome
+2026-03-28 06:34:11,501 | INFO | Driver has been saved in cache [C:\Users\inhop\.wdm\drivers\chromedriver\win64\146.0.7680.165]
+2026-03-28 06:38:05,352 | INFO | crawler started
+2026-03-28 06:38:05,353 | INFO | ====== WebDriver manager ======
+2026-03-28 06:38:06,945 | INFO | Get LATEST chromedriver version for google-chrome
+2026-03-28 06:38:07,464 | INFO | Get LATEST chromedriver version for google-chrome
+2026-03-28 06:38:07,955 | INFO | There is no [win64] chromedriver "146.0.7680.165" for browser google-chrome "146.0.7680" in cache
+2026-03-28 06:38:07,956 | INFO | Get LATEST chromedriver version for google-chrome
+2026-03-28 06:38:09,040 | INFO | WebDriver version 146.0.7680.165 selected
+2026-03-28 06:38:09,047 | INFO | Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/146.0.7680.165/win32/chromedriver-win32.zip
+2026-03-28 06:38:09,048 | INFO | About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/146.0.7680.165/win32/chromedriver-win32.zip
+2026-03-28 06:38:09,549 | INFO | Driver downloading response is 200
+2026-03-28 06:38:12,279 | INFO | Get LATEST chromedriver version for google-chrome
+2026-03-28 06:38:12,854 | INFO | Driver has been saved in cache [C:\Users\inhop\.wdm\drivers\chromedriver\win64\146.0.7680.165]
+2026-03-28 06:38:20,294 | INFO | departments found: 51
+2026-03-28 06:38:20,295 | INFO | [1/51] 가정의학교실 / Department of Family Medicine
+2026-03-28 06:38:21,849 | INFO | [2/51] 내과학교실 / Department of Internal Medicine
+2026-03-28 06:38:23,743 | INFO | [3/51] 마취통증의학교실 / Department of Anesthesiology and Pain Medicine
+2026-03-28 06:38:25,517 | INFO | [4/51] 미생물학교실 / Department of Microbiology
+2026-03-28 06:38:27,179 | INFO | [5/51] 방사선종양학교실 / Department of Radiation Oncology
+2026-03-28 06:38:28,876 | INFO | [6/51] 법의학과 / Department of Forensic Medicine
+2026-03-28 06:38:30,557 | INFO | [7/51] 병리학교실 / Department of Pathology
+2026-03-28 06:38:32,246 | INFO | [8/51] 비뇨의학교실 / Department of Urology
+2026-03-28 06:38:33,910 | INFO | [9/51] 산부인과학교실 / Department of Obstetrics and Gynecology
+2026-03-28 06:38:35,641 | INFO | [10/51] 생리학교실 / Department of Physiology
+2026-03-28 06:38:37,198 | INFO | [11/51] 생화학. 분자생물학교실 / Department of Biochemistry and Molecular Biology
+2026-03-28 06:38:38,774 | INFO | [12/51] 성형외과학교실 / Department of Plastic and Reconstructive Surgery
+2026-03-28 06:38:40,343 | INFO | [13/51] 소아과학교실 / Department of Pediatrics
+2026-03-28 06:38:41,972 | INFO | [14/51] 신경과학교실 / Department of Neurology
+2026-03-28 06:38:43,587 | INFO | [15/51] 신경외과학교실 / Department of Neurosurgery
+2026-03-28 06:38:45,361 | INFO | [16/51] 안과학교실 / Department of Ophthalmology
+2026-03-28 06:38:47,153 | INFO | [17/51] 약리학교실 / Department of Pharmacology
+2026-03-28 06:38:48,943 | INFO | [18/51] 열대의학교실 / Department of Tropical Medicine
+2026-03-28 06:38:50,709 | INFO | [19/51] 영상의학교실 / Department of Radiology
+2026-03-28 06:38:52,593 | INFO | [20/51] 예방의학교실 / Department of Preventive Medicine
+2026-03-28 06:38:54,411 | INFO | [21/51] 외과학교실 / Department of Surgery
+2026-03-28 06:38:56,167 | INFO | [22/51] 응급의학교실 / Department of Emergency Medicine
+2026-03-28 06:38:57,893 | INFO | [23/51] 의생명과학부 / BioMedical Science Institute
+2026-03-28 06:38:59,540 | INFO | [24/51] 의생명시스템정보학교실 / Department of Biomedical Systems Informatics
+2026-03-28 06:39:01,205 | INFO | [25/51] 의학공학교실 / Department of Medical Engineering
+2026-03-28 06:39:02,976 | INFO | [26/51] 이비인후과학교실 / Department of Otorhinolaryngology
+2026-03-28 06:39:04,675 | INFO | [27/51] 인문사회의학교실 / Department of Medical Humanities and Social Sciences
+2026-03-28 06:39:06,343 | INFO | [28/51] 재활의학교실 / Department of Rehabilitation Medicine
+2026-03-28 06:39:08,031 | INFO | [29/51] 정신과학교실 / Department of Psychiatry
+2026-03-28 06:39:09,741 | INFO | [30/51] 정형외과학교실 / Department of Orthopaedic Surgery
+2026-03-28 06:39:11,453 | INFO | [31/51] 진단검사의학교실 / Department of Laboratory Medicine
+2026-03-28 06:39:13,148 | INFO | [32/51] 피부과학교실 / Department of Dermatology
+2026-03-28 06:39:14,813 | INFO | [33/51] 해부학교실 / Department of Anatomy
+2026-03-28 06:39:16,507 | INFO | [34/51] 핵의학교실 / Department of Nuclear Medicine
+2026-03-28 06:39:18,192 | INFO | [35/51] 흉부외과학교실 / Department of Thoracic and Cardiovascular Surgery
+2026-03-28 06:39:19,759 | INFO | [36/51] 간호학과 / Department of Nursing
+2026-03-28 06:39:21,571 | INFO | [37/51] 교정과학교실 / Department of Orthodontics
+2026-03-28 06:39:23,395 | INFO | [38/51] 구강내과학교실 / Department of Orofacial Pain and Oral Medicine
+2026-03-28 06:39:25,194 | INFO | [39/51] 구강병리학교실 / Department of Oral Pathology
+2026-03-28 06:39:26,970 | INFO | [40/51] 구강생물학교실 / Department of Oral Biology
+2026-03-28 06:39:28,753 | INFO | [41/51] 구강악안면외과학교실 / Department of Oral and Maxillofacial Surgery
+2026-03-28 06:39:30,531 | INFO | [42/51] 보존과학교실 / Department of Conservative Dentistry
+2026-03-28 06:39:32,337 | INFO | [43/51] 보철과학교실 / Department of Prosthodontics
+2026-03-28 06:39:34,131 | INFO | [44/51] 소아치과학교실 / Department of Pediatric Dentistry
+2026-03-28 06:39:35,871 | INFO | [45/51] 영상치의학교실 / Department of Oral and Maxillofacial Radiology
+2026-03-28 06:39:37,553 | INFO | [46/51] 예방치과학교실 / Department of Preventive Dentistry and Public Oral Health
+2026-03-28 06:39:39,073 | INFO | [47/51] 치과생체재료공학교실 / Department of Dental Biomaterials and Bioengineering
+2026-03-28 06:39:40,748 | INFO | [48/51] 치의학교육학교실 / Department of Dental Education
+2026-03-28 06:39:42,442 | INFO | [49/51] 치주과학교실 / Department of Periodontology
+2026-03-28 06:39:44,125 | INFO | [50/51] 통합치의학교실 / Department of Advanced General Dentistry
+2026-03-28 06:39:45,805 | INFO | [51/51] 보건대학원 / Graduate School of Public Health
+2026-03-28 06:39:49,169 | INFO | total records: 0
+2026-03-28 06:39:49,283 | INFO | saved db: output/yonsei_medicine_faculty.db
+2026-03-28 06:39:49,283 | INFO | saved csv: output/yonsei_medicine_faculty.csv
+2026-03-28 06:39:49,283 | INFO | crawler finished
