@@ -5,7 +5,8 @@ from pathlib import Path
 from crawler.config import DEFAULT_CSV_PATH, DEFAULT_DB_PATH, DEFAULT_LOG_PATH, DEFAULT_XLSX_PATH, HEADLESS
 from crawler.database import create_db, save_to_csv, save_to_db, save_to_xlsx, get_existing_detail_urls
 from crawler.reporting import print_summary, save_summary_json
-from crawler.scraper_parallel import crawl_all_parallel
+# from crawler.scraper_parallel import crawl_all_parallel
+from crawler.scraper_parallel_debug import crawl_all_parallel
 
 
 def str2bool(value):

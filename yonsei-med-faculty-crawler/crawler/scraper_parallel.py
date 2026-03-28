@@ -12,17 +12,28 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from webdriver_manager.chrome import ChromeDriverManager
 
-from .config import INDEX_URL, HEADLESS, PAGE_LOAD_SLEEP, DETAIL_PAGE_SLEEP
+from .config import INDEX_URL, HEADLESS
 from .models import FacultyRecord
 from .utils import clean_text, normalize_email, normalize_phone, split_department_label
 
-
 EMAIL_RE = re.compile(r"[A-Z0-9._%+\-]+@[A-Z0-9.\-]+\.[A-Z]{2,}", re.I)
-TITLE_KO_RE = re.compile(r"(교수|부교수|조교수|명예교수|임상교수|연구교수|겸임교수|강사)")
-NAME_KO_RE = re.compile(r"^[가-힣]{2,4}$")
-NAME_EN_RE = re.compile(r"^[A-Z][a-z]+(?:[- ][A-Z][a-z]+){1,3}$")
+NAME_KO_INLINE_RE = re.compile(r"([가-힣]{2,4})")
+NAME_EN_INLINE_RE = re.compile(r"([A-Z][a-z]+(?:[- ][A-Z][a-z]+){1,3})")
+
+KOR_TITLE_RE = re.compile(r"(명예교수|임상교수|연구교수|겸임교수|부교수|조교수|교수|강사)")
+ENG_TITLE_PATTERNS = [
+    (re.compile(r"\bEmeritus Professor\b", re.I), "명예교수"),
+    (re.compile(r"\bClinical Professor\b", re.I), "임상교수"),
+    (re.compile(r"\bResearch Professor\b", re.I), "연구교수"),
+    (re.compile(r"\bAdjunct Professor\b", re.I), "겸임교수"),
+    (re.compile(r"\bAssociate Professor\b", re.I), "부교수"),
+    (re.compile(r"\bAssistant Professor\b", re.I), "조교수"),
+    (re.compile(r"\bProfessor\b", re.I), "교수"),
+    (re.compile(r"\bLecturer\b", re.I), "강사"),
+]
 
 NOISE_LINES = {
     "", "Login", "Name", "Department", "more +",
@@ -37,27 +48,62 @@ def make_driver(headless: bool = HEADLESS):
     options = Options()
     if headless:
         options.add_argument("--headless=new")
+
     options.add_argument("--window-size=1400,2000")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
     options.add_argument("--disable-dev-shm-usage")
+    options.add_argument("--disable-extensions")
+    options.add_argument("--disable-infobars")
+    options.add_argument("--blink-settings=imagesEnabled=false")
+    options.add_argument("--log-level=3")
     options.add_argument(
         "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
     )
+
     driver_path = ChromeDriverManager().install()
     if driver_path.endswith("THIRD_PARTY_NOTICES.chromedriver"):
         driver_path = driver_path.replace("THIRD_PARTY_NOTICES.chromedriver", "chromedriver.exe")
+
     service = Service(driver_path)
     driver = webdriver.Chrome(service=service, options=options)
+
     driver.implicitly_wait(3)
+    driver.set_page_load_timeout(60)
+    driver.set_script_timeout(60)
+
     return driver
 
 
-def wait_document_ready(driver, timeout: int = 15):
+def wait_document_ready(driver, timeout: int = 20):
     WebDriverWait(driver, timeout).until(
         lambda d: d.execute_script("return document.readyState") == "complete"
     )
+
+
+def safe_get(driver, url: str, retries: int = 3, wait_timeout: int = 20):
+    last_error = None
+
+    for attempt in range(1, retries + 1):
+        try:
+            logging.info("safe_get attempt %d/%d: %s", attempt, retries, url)
+            driver.get(url)
+            wait_document_ready(driver, timeout=wait_timeout)
+            return
+        except Exception as e:
+            last_error = e
+            logging.warning(
+                "safe_get failed %d/%d: %s | %s",
+                attempt, retries, url, e
+            )
+            try:
+                driver.execute_script("window.stop();")
+            except Exception:
+                pass
+            time.sleep(2)
+
+    raise last_error
 
 
 def _extract_labeled(lines: List[str], label: str) -> str:
@@ -69,8 +115,7 @@ def _extract_labeled(lines: List[str], label: str) -> str:
 
 
 def _clean_lines(lines: List[str]) -> List[str]:
-    out = []
-    seen = set()
+    out, seen = [], set()
     for line in lines:
         line = clean_text(line)
         if not line or line in NOISE_LINES:
@@ -81,7 +126,47 @@ def _clean_lines(lines: List[str]) -> List[str]:
     return out
 
 
-def _snapshot_anchors(driver) -> List[Dict[str, str]]:
+def _extract_title_ko(text: str) -> str:
+    text = clean_text(text)
+    m = KOR_TITLE_RE.search(text)
+    if m:
+        return clean_text(m.group(1))
+    for pattern, mapped in ENG_TITLE_PATTERNS:
+        if pattern.search(text):
+            return mapped
+    return ""
+
+
+def _parse_inline_fields(text: str) -> Dict[str, str]:
+    text = clean_text(text)
+    name_ko = name_en = title_ko = email = ""
+
+    if text and text not in NOISE_LINES:
+        m = NAME_KO_INLINE_RE.search(text)
+        if m:
+            candidate = clean_text(m.group(1))
+            if candidate not in NOISE_LINES:
+                name_ko = candidate
+
+        m = NAME_EN_INLINE_RE.search(text)
+        if m:
+            name_en = clean_text(m.group(1))
+
+        title_ko = _extract_title_ko(text)
+
+        m = EMAIL_RE.search(text)
+        if m:
+            email = normalize_email(m.group(0))
+
+    return {
+        "name_ko": name_ko,
+        "name_en": name_en,
+        "title_ko": title_ko,
+        "email": email,
+    }
+
+
+def _snapshot_anchors(driver):
     items = []
     for a in driver.find_elements(By.TAG_NAME, "a"):
         try:
@@ -94,14 +179,11 @@ def _snapshot_anchors(driver) -> List[Dict[str, str]]:
     return items
 
 
-def parse_index_for_medicine_departments(driver) -> List[Dict[str, str]]:
-    driver.get(INDEX_URL)
-    wait_document_ready(driver, timeout=15)
-    time.sleep(PAGE_LOAD_SLEEP)
+def parse_index_for_medicine_departments(driver):
+    safe_get(driver, INDEX_URL, retries=3, wait_timeout=20)
 
     soup = BeautifulSoup(driver.page_source, "html.parser")
-    departments = []
-    seen = set()
+    departments, seen = [], set()
 
     for a in soup.find_all("a", href=True):
         href = a.get("href", "")
@@ -128,10 +210,14 @@ def parse_index_for_medicine_departments(driver) -> List[Dict[str, str]]:
     return departments
 
 
-def parse_department_page(driver, dept_meta: Dict[str, str], existing_detail_urls: Optional[Set[str]] = None) -> List[FacultyRecord]:
-    driver.get(dept_meta["department_url"])
-    wait_document_ready(driver, timeout=15)
-    time.sleep(PAGE_LOAD_SLEEP)
+def parse_department_page(driver, dept_meta: Dict[str, str], existing_detail_urls: Optional[Set[str]] = None):
+    safe_get(driver, dept_meta["department_url"], retries=3, wait_timeout=20)
+
+    WebDriverWait(driver, 20).until(
+        EC.presence_of_all_elements_located(
+            (By.XPATH, "//a[contains(@href, 'depMember.do?mode=view')]")
+        )
+    )
 
     existing_detail_urls = existing_detail_urls or set()
     anchors = _snapshot_anchors(driver)
@@ -140,7 +226,7 @@ def parse_department_page(driver, dept_meta: Dict[str, str], existing_detail_url
     if anchors:
         logging.info("anchor sample: %s", anchors[:20])
 
-    members: Dict[str, Dict[str, str]] = {}
+    members = {}
     current_detail = None
 
     for item in anchors:
@@ -158,32 +244,19 @@ def parse_department_page(driver, dept_meta: Dict[str, str], existing_detail_url
                     "email": "",
                 }
 
-            # Sometimes the name itself is on the same detail link anchor.
-            if NAME_KO_RE.fullmatch(text) and text not in NOISE_LINES:
-                members[current_detail]["name_ko"] = text
-            elif NAME_EN_RE.fullmatch(text):
-                members[current_detail]["name_en"] = text
-
-            m = TITLE_KO_RE.search(text)
-            if m and not members[current_detail]["title_ko"]:
-                members[current_detail]["title_ko"] = clean_text(m.group(1))
+            parsed = _parse_inline_fields(text)
+            for k, v in parsed.items():
+                if v and not members[current_detail][k]:
+                    members[current_detail][k] = v
             continue
 
         if not current_detail:
             continue
 
-        if NAME_KO_RE.fullmatch(text) and text not in NOISE_LINES and not members[current_detail]["name_ko"]:
-            members[current_detail]["name_ko"] = text
-            continue
-
-        if NAME_EN_RE.fullmatch(text) and not members[current_detail]["name_en"]:
-            members[current_detail]["name_en"] = text
-            continue
-
-        m = TITLE_KO_RE.search(text)
-        if m and not members[current_detail]["title_ko"]:
-            members[current_detail]["title_ko"] = clean_text(m.group(1))
-            continue
+        parsed = _parse_inline_fields(text)
+        for k, v in parsed.items():
+            if v and not members[current_detail][k]:
+                members[current_detail][k] = v
 
         if href.startswith("mailto:"):
             email = normalize_email(href.replace("mailto:", ""))
@@ -194,7 +267,8 @@ def parse_department_page(driver, dept_meta: Dict[str, str], existing_detail_url
     if members:
         logging.info("member sample: %s", list(members.values())[:5])
 
-    records: List[FacultyRecord] = []
+    records = []
+
     for detail_url, data in members.items():
         if detail_url in existing_detail_urls:
             continue
@@ -204,11 +278,10 @@ def parse_department_page(driver, dept_meta: Dict[str, str], existing_detail_url
         detail_office = ""
         detail_campus = ""
         detail_department_en = ""
+        detail_title_ko = ""
 
         try:
-            driver.get(detail_url)
-            wait_document_ready(driver, timeout=15)
-            time.sleep(DETAIL_PAGE_SLEEP)
+            safe_get(driver, detail_url, retries=3, wait_timeout=20)
 
             soup = BeautifulSoup(driver.page_source, "html.parser")
             lines = _clean_lines([clean_text(x) for x in soup.stripped_strings])
@@ -218,10 +291,16 @@ def parse_department_page(driver, dept_meta: Dict[str, str], existing_detail_url
             detail_office = _extract_labeled(lines, "Office")
             detail_campus = _extract_labeled(lines, "Campus")
             detail_department_en = _extract_labeled(lines, "Department")
+
+            for line in lines:
+                detail_title_ko = _extract_title_ko(line)
+                if detail_title_ko:
+                    break
+
         except Exception as e:
             logging.warning("detail parse failed: %s | %s", detail_url, e)
 
-        rec = FacultyRecord(
+        records.append(FacultyRecord(
             college_ko=dept_meta["college_ko"],
             college_en=dept_meta["college_en"],
             department_ko=dept_meta["department_ko"],
@@ -229,14 +308,13 @@ def parse_department_page(driver, dept_meta: Dict[str, str], existing_detail_url
             campus=detail_campus,
             name_ko=data["name_ko"],
             name_en=data["name_en"],
-            title_ko=data["title_ko"],
+            title_ko=data["title_ko"] or detail_title_ko,
             email=detail_email or data["email"],
             phone=detail_phone,
             office=detail_office,
             detail_url=detail_url,
             source_department_url=dept_meta["department_url"],
-        )
-        records.append(rec)
+        ))
 
     logging.info(
         "department result: %s | detail links=%d | new records=%d",
@@ -247,7 +325,7 @@ def parse_department_page(driver, dept_meta: Dict[str, str], existing_detail_url
     return records
 
 
-def deduplicate(records: List[FacultyRecord]) -> List[FacultyRecord]:
+def deduplicate(records):
     result = {}
     for r in records:
         key = (
@@ -261,29 +339,53 @@ def deduplicate(records: List[FacultyRecord]) -> List[FacultyRecord]:
     return list(result.values())
 
 
-def chunk_departments(departments: List[Dict[str, str]], workers: int) -> List[List[Dict[str, str]]]:
+def chunk_departments(departments, workers):
     workers = max(1, workers)
     chunk_size = max(1, math.ceil(len(departments) / workers))
     return [departments[i:i + chunk_size] for i in range(0, len(departments), chunk_size)]
 
 
-def crawl_department_chunk(chunk_id: int, departments: List[Dict[str, str]], headless: bool, existing_detail_urls: Optional[Set[str]] = None) -> List[FacultyRecord]:
-    driver = make_driver(headless=headless)
-    try:
-        records: List[FacultyRecord] = []
-        for idx, dept in enumerate(departments, start=1):
-            logging.info("[worker %d] [%d/%d] %s / %s", chunk_id, idx, len(departments), dept["department_ko"], dept["department_en"])
-            try:
-                dept_records = parse_department_page(driver, dept, existing_detail_urls=existing_detail_urls)
-                records.extend(dept_records)
-            except Exception as e:
-                logging.warning("[worker %d] department failed: %s | %s", chunk_id, dept["department_url"], e)
-        return records
-    finally:
-        driver.quit()
+def crawl_department_chunk(chunk_id, departments, headless, existing_detail_urls=None):
+    records = []
+
+    for idx, dept in enumerate(departments, start=1):
+        logging.info(
+            "[worker %d] [%d/%d] %s / %s",
+            chunk_id,
+            idx,
+            len(departments),
+            dept["department_ko"],
+            dept["department_en"],
+        )
+
+        driver = None
+        try:
+            driver = make_driver(headless=headless)
+            records.extend(
+                parse_department_page(
+                    driver,
+                    dept,
+                    existing_detail_urls=existing_detail_urls,
+                )
+            )
+        except Exception as e:
+            logging.warning(
+                "[worker %d] department failed: %s | %s",
+                chunk_id,
+                dept["department_url"],
+                e,
+            )
+        finally:
+            if driver:
+                try:
+                    driver.quit()
+                except Exception:
+                    pass
+
+    return records
 
 
-def crawl_all_parallel(headless: bool = HEADLESS, workers: int = 4, existing_detail_urls: Optional[Set[str]] = None, limit_departments: int = 0) -> List[FacultyRecord]:
+def crawl_all_parallel(headless=HEADLESS, workers=1, existing_detail_urls=None, limit_departments=0):
     bootstrap_driver = make_driver(headless=headless)
     try:
         departments = parse_index_for_medicine_departments(bootstrap_driver)
@@ -297,13 +399,24 @@ def crawl_all_parallel(headless: bool = HEADLESS, workers: int = 4, existing_det
         return []
 
     chunks = chunk_departments(departments, workers)
-    all_records: List[FacultyRecord] = []
+    all_records = []
+
     with ThreadPoolExecutor(max_workers=max(1, workers)) as executor:
         futures = [
-            executor.submit(crawl_department_chunk, i + 1, chunk, headless, existing_detail_urls)
+            executor.submit(
+                crawl_department_chunk,
+                i + 1,
+                chunk,
+                headless,
+                existing_detail_urls,
+            )
             for i, chunk in enumerate(chunks)
         ]
+
         for future in as_completed(futures):
-            all_records.extend(future.result())
+            try:
+                all_records.extend(future.result())
+            except Exception as e:
+                logging.warning("worker future failed: %s", e)
 
     return deduplicate(all_records)

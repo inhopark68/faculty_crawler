@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: run.py 실행",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "D:\\coding\\yuhs_home_crowling\\yonsei-med-faculty-crawler\\run.py",
+      "console": "integratedTerminal",
+      "cwd": "D:\\coding\\yuhs_home_crowling\\yonsei-med-faculty-crawler"
+    }
+  ]
+}
