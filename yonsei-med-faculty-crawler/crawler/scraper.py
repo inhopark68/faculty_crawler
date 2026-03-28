@@ -1,6 +1,6 @@
 import logging
 import time
-from typing import Dict, List
+from typing import Dict, List, Optional, Set
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
@@ -9,7 +9,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
-from .config import INDEX_URL, HEADLESS, PAGE_LOAD_SLEEP, DETAIL_PAGE_SLEEP
+from .config import INDEX_URL, HEADLESS, PAGE_LOAD_SLEEP, DETAIL_PAGE_SLEEP, DETAIL_RETRY_COUNT
 from .models import FacultyRecord
 from .utils import (
     clean_text,
@@ -18,6 +18,8 @@ from .utils import (
     split_department_label,
     parse_name_line,
     extract_labeled_value,
+    any_korean,
+    any_english,
 )
 
 
@@ -35,8 +37,6 @@ def make_driver(headless: bool = HEADLESS):
     )
 
     driver_path = ChromeDriverManager().install()
-
-    # webdriver-manager가 간혹 THIRD_PARTY_NOTICES.chromedriver를 반환하는 문제 회피
     if driver_path.endswith("THIRD_PARTY_NOTICES.chromedriver"):
         driver_path = driver_path.replace("THIRD_PARTY_NOTICES.chromedriver", "chromedriver.exe")
 
@@ -44,6 +44,7 @@ def make_driver(headless: bool = HEADLESS):
     driver = webdriver.Chrome(service=service, options=options)
     driver.implicitly_wait(5)
     return driver
+
 
 def get_page_soup(driver, url: str, sleep_sec: float) -> BeautifulSoup:
     driver.get(url)
@@ -84,40 +85,51 @@ def enrich_record_from_detail(driver, record: FacultyRecord):
     if not record.detail_url:
         return
 
-    soup = get_page_soup(driver, record.detail_url, DETAIL_PAGE_SLEEP)
-    text = clean_text(soup.get_text("\n", strip=True))
+    last_error = None
+    for attempt in range(1, DETAIL_RETRY_COUNT + 1):
+        try:
+            soup = get_page_soup(driver, record.detail_url, DETAIL_PAGE_SLEEP)
+            text = clean_text(soup.get_text("\n", strip=True))
 
-    detail_email = normalize_email(extract_labeled_value(text, "E-mail"))
-    detail_tel = normalize_phone(extract_labeled_value(text, "Tel"))
-    detail_office = extract_labeled_value(text, "Office")
-    detail_campus = extract_labeled_value(text, "Campus")
-    detail_dept = extract_labeled_value(text, "Department")
+            detail_email = normalize_email(extract_labeled_value(text, "E-mail"))
+            detail_tel = normalize_phone(extract_labeled_value(text, "Tel"))
+            detail_office = extract_labeled_value(text, "Office")
+            detail_campus = extract_labeled_value(text, "Campus")
+            detail_dept = extract_labeled_value(text, "Department")
 
-    if detail_email:
-        record.email = detail_email
-    if detail_tel:
-        record.phone = detail_tel
-    if detail_office:
-        record.office = detail_office
-    if detail_campus:
-        record.campus = detail_campus
-    if detail_dept and not record.department_en:
-        record.department_en = detail_dept
+            if detail_email:
+                record.email = detail_email
+            if detail_tel:
+                record.phone = detail_tel
+            if detail_office:
+                record.office = detail_office
+            if detail_campus:
+                record.campus = detail_campus
+            if detail_dept and not record.department_en:
+                record.department_en = detail_dept
 
-    for line in [clean_text(x) for x in soup.stripped_strings]:
-        if any(ch.isalpha() for ch in line) and any("\uac00" <= ch <= "\ud7a3" for ch in line):
-            nk, ne = parse_name_line(line)
-            if nk and not record.name_ko:
-                record.name_ko = nk
-            if ne and not record.name_en:
-                record.name_en = ne
-            break
+            for line in [clean_text(x) for x in soup.stripped_strings]:
+                if any_korean(line) and any_english(line):
+                    nk, ne = parse_name_line(line)
+                    if nk and not record.name_ko:
+                        record.name_ko = nk
+                    if ne and not record.name_en:
+                        record.name_en = ne
+                    break
+            return
+        except Exception as e:
+            last_error = e
+            time.sleep(1.0)
+
+    if last_error:
+        raise last_error
 
 
-def parse_department_page(driver, dept_meta: Dict[str, str]) -> List[FacultyRecord]:
+def parse_department_page(driver, dept_meta: Dict[str, str], existing_detail_urls: Optional[Set[str]] = None) -> List[FacultyRecord]:
     soup = get_page_soup(driver, dept_meta["department_url"], PAGE_LOAD_SLEEP)
     records = []
     seen_detail = set()
+    existing_detail_urls = existing_detail_urls or set()
 
     for a in soup.find_all("a", href=True):
         href = a.get("href", "")
@@ -127,13 +139,17 @@ def parse_department_page(driver, dept_meta: Dict[str, str]) -> List[FacultyReco
                 continue
             seen_detail.add(detail_url)
 
+            if detail_url in existing_detail_urls:
+                logging.info("skip existing: %s", detail_url)
+                continue
+
             parent_text = clean_text(a.parent.get_text("\n", strip=True)) if a.parent else ""
             lines = [clean_text(x) for x in parent_text.split("\n") if clean_text(x)]
 
             name_ko, name_en, title_ko, email, campus = "", "", "", "", ""
 
             for line in lines:
-                if any(ch.isalpha() for ch in line) and any("\uac00" <= ch <= "\ud7a3" for ch in line):
+                if any_korean(line) and any_english(line):
                     nk, ne = parse_name_line(line)
                     if nk or ne:
                         name_ko, name_en = nk, ne
@@ -185,10 +201,12 @@ def deduplicate(records: List[FacultyRecord]) -> List[FacultyRecord]:
     return list(result.values())
 
 
-def crawl_all() -> List[FacultyRecord]:
-    driver = make_driver()
+def crawl_all(headless: bool = HEADLESS, existing_detail_urls: Optional[Set[str]] = None, limit_departments: int = 0) -> List[FacultyRecord]:
+    driver = make_driver(headless=headless)
     try:
         departments = parse_index_for_medicine_departments(driver)
+        if limit_departments > 0:
+            departments = departments[:limit_departments]
         logging.info("departments found: %d", len(departments))
 
         all_records = []
@@ -201,7 +219,7 @@ def crawl_all() -> List[FacultyRecord]:
                 dept["department_en"],
             )
             try:
-                records = parse_department_page(driver, dept)
+                records = parse_department_page(driver, dept, existing_detail_urls=existing_detail_urls)
                 all_records.extend(records)
             except Exception as e:
                 logging.warning("department failed: %s | %s", dept["department_url"], e)

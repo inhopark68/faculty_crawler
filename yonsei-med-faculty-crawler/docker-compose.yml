@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: yonsei-faculty-api
+    command: uvicorn api.main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+
+  ui:
+    build: .
+    container_name: yonsei-faculty-ui
+    command: streamlit run ui/app.py --server.address 0.0.0.0 --server.port 8501
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./output:/app/output
+      - ./logs:/app/logs
+    depends_on:
+      - api

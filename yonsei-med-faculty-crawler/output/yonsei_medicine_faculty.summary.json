@@ -1,0 +1,8 @@
+{
+  "total_records": 3,
+  "records_with_email": 3,
+  "records_with_phone": 3,
+  "department_counts": {
+    "가정의학교실": 3
+  }
+}
