@@ -1,0 +1,11 @@
+.venv
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.git
+.gitignore
+output/*.db
+output/*.csv
+output/*.xlsx
+logs/*.log

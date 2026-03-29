@@ -1,0 +1,4257 @@
+<html lang="ko"><head>
+<title>연세대학교 교원정보 시스템 | 소속검색 | All</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<link rel="canonical" href="https://ee.yonsei.ac.kr/faculty/depMember.do"><link rel="shortcut icon" href="/_res/board/etc/favicon.ico">
+
+<link rel="stylesheet" type="text/css" href="/_common/cms.css">
+<link rel="stylesheet" type="text/css" href="/_res/faculty/_css/layout.css">
+<!--[if IE 8]>
+	<link rel="stylesheet" type="text/css" href="/_common/ie8.css" />
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="/_common/css/toastr.css">
+<link rel="stylesheet" type="text/css" href="/_common/css/ui.datepicker.css">
+<link rel="stylesheet" type="text/css" href="/_custom/yonseidep/_app/member_search/css/member.css">
+
+<link rel="stylesheet" type="text/css" href="/_res/faculty/_css/user.css">
+
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y29BRTS4RG&amp;cx=c&amp;gtm=4e63p1"></script><script type="text/javascript" src="/_common/js/jquery/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="/_common/js/jquery/jquery-ui-1.11.4.min.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+	var _thisHost = location.protocol+'//'+location.host, _thisUrl = document.location.href,_so_ = false,_cur_menu_cd = '461',_edit_content = false,front_page_edit = true,zooInOutMode = 'font',_reouscePath = '/_res/faculty/',editorVendor = 'froala',sslYN = 'N',sslPort = '8443',servicePort = '',developMode = false,device='pc',isMobile=false,_cfgUseDevMode = false,_siteId = 'faculty',printSelector = '#jwxe_main_content',ctx = '',rootPath = '',locale= 'ko',localeScriptPath='/_custom/yonseidep/resource/js/';
+//]]>
+</script>
+
+<script type="text/javascript" src="/_common/cms.js"></script><style type="text/css"></style><script type="text/javascript" src="/_common/js/control.js"></script>
+<script type="text/javascript" src="/_common/js/toastr.js"></script>
+<script type="text/javascript" src="/_common/js/datepicker/ui.datepicker.all.js"></script>
+
+<script type="text/javascript" src="/_res/faculty/_js/user.js"></script>
+
+
+	<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		document.querySelectorAll('img').forEach((img) => {
+			img.addEventListener('contextmenu', (event) => {
+				event.preventDefault();
+			});
+		});
+	});
+	</script>
+	<style>
+		/* 드래그 방지 */
+		img {
+			user-select: none; /* 텍스트 선택 방지 */
+			-webkit-user-drag: none; /* 이미지 드래그 방지 (크롬) */
+			-moz-user-drag: none; /* 이미지 드래그 방지 (파이어폭스) */
+			-ms-user-drag: none; /* 이미지 드래그 방지 (엣지) */
+			user-drag: none; /* 이미지 드래그 방지 (표준) */
+		}
+	</style>
+
+<style type="text/css" media="print">.dropShadow{visibility:hidden;}</style></head>
+<body id="item_body" class="pc">
+<ul id="go_main">
+	<li><a href="#jwxe_main_content">본문 바로가기</a></li>
+	
+	
+</ul>
+
+
+<header>
+<div class="header-wrap">
+	<div class="header-box">
+		<h1 class="header-h1">
+          <a href="/faculty/index.do"><img alt="연세대학교" src="/_res/faculty/img/common/logo_header.png"></a>
+        </h1>
+        <div class="header-top-btn-wrap">
+          
+           
+          
+            <a class="login-btn" href="/faculty/login.do" title="로그인">Login</a> 
+          
+          
+        </div>
+      
+		<div class="search-wrap">
+			<h2>
+				연세대학교 교원정보 | Yonsei Faculty Information </h2>
+          <form action="/faculty/member.do" method="get" onsubmit="return beforeSubmit()">
+				<fieldset>
+					<legend class="hide" title="통합검색">통합검색</legend>
+					<div class="search-input-zone">
+                      <label class="hide" for="srSearchVal">통합검색 단어 입력 </label>
+                      <input class="search-input" id="srSearchVal" name="srSearchVal" type="text" placeholder="Enter Search Name Here..." value="">
+                      <input alt="검색" class="search-btn" src="/_res/faculty/img/common/btn_search.gif" type="image" value="검색">
+                  </div>
+				</fieldset>
+			</form>
+			<div class="search-tab-wrap">
+              <a href="/faculty/name_search.do" title="이름검색 바로가기">Name</a>
+              <a href="/faculty/dep_search.do" title="소속검색 바로가기">Department</a></div>
+		</div>
+	</div>
+</div>
+</header>
+<div class="container">
+	<div class="search-option-wrap"></div>
+	<div class="content" id="jwxe_main_content">
+		<div class="tab-wrap"></div>
+		<div class="belong-wrap">
+
+
+
+
+
+
+
+
+ 
+
+ 
+	
+
+
+
+
+
+
+
+
+
+<!-- 교원정보 검색 - 학과 검색 -->
+
+
+
+		<div class="content-box  ">
+		  	<div class="pro-list-navi-box abc">
+		    	<p>
+		    	
+		    	
+		    	
+		    		<span class="dep01">서울 캠퍼스 <br> Seoul Campus</span>
+		    	
+
+		    	
+                  
+                    
+                  
+                    <span class="dep01">의과대학 <br> College of Medicine</span>
+                  
+                  
+		    	
+
+                
+                  
+                
+                   <span class="dep01">마취통증의학교실 <br> Department of Anesthesiology and Pain Medicine</span>
+                
+                
+		    	</p>
+		  	</div>
+			<div class="pro-list">
+              
+			 
+			 
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="고서희 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	고서희
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		Seohee	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>조교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=%2FrmBydIHsIq5Nkx5mEhYmA%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="곽영란 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=%2FrmBydIHsIq5Nkx5mEhYmA%3D%3D&amp;campus=sinchonMed" title="곽영란 자세히보기">
+                                 
+                        
+
+		              
+		              	곽영란
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        YOUNG LAN KWAK	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:YLKWAK@YUHS.AC" title="메일 보내기">YLKWAK@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=%2FrmBydIHsIq5Nkx5mEhYmA%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=JUHFnBBfw%2B0Cq4TpYjZmrg%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="구본녀 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=JUHFnBBfw%2B0Cq4TpYjZmrg%3D%3D&amp;campus=sinchonMed" title="구본녀 자세히보기">
+                                 
+                        
+
+		              
+		              	구본녀
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Bon-Nyeo Koo	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:KOOBN@YUHS.AC" title="메일 보내기">KOOBN@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=JUHFnBBfw%2B0Cq4TpYjZmrg%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=wmRQ%2B%2FmelAYL4W4BCgSAyg%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김기준 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=wmRQ%2B%2FmelAYL4W4BCgSAyg%3D%3D&amp;campus=sinchonMed" title="김기준 자세히보기">
+                                 
+                        
+
+		              
+		              	김기준
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Ki Jun Kim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:KKJ6063@YUHS.AC" title="메일 보내기">KKJ6063@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=wmRQ%2B%2FmelAYL4W4BCgSAyg%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=yMO6xztpMkjCJZ56lxhG5w%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김나영 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=yMO6xztpMkjCJZ56lxhG5w%3D%3D&amp;campus=sinchonMed" title="김나영 자세히보기">
+                                 
+                        
+
+		              
+		              	김나영
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        NaYoung Kim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:KNNYYY@YUHS.AC" title="메일 보내기">KNNYYY@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=yMO6xztpMkjCJZ56lxhG5w%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=x2jbQJmDR4%2FubPH8mcF7tA%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김남오 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=x2jbQJmDR4%2FubPH8mcF7tA%3D%3D&amp;campus=sinchonMed" title="김남오 자세히보기">
+                                 
+                        
+
+		              
+		              	김남오
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Namo Kim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>부교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:NAMO@YUHS.AC" title="메일 보내기">NAMO@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=x2jbQJmDR4%2FubPH8mcF7tA%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=EJEZfJhLcXamHRgRSQ8jWg%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김도형 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=EJEZfJhLcXamHRgRSQ8jWg%3D%3D&amp;campus=sinchonMed" title="김도형 자세히보기">
+                                 
+                        
+
+		              
+		              	김도형
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Do Hyeong Kim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:BREADFANS@YUHS.AC" title="메일 보내기">BREADFANS@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=EJEZfJhLcXamHRgRSQ8jWg%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=mrFprLeK2gbRs99t4neV6Q%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김명화 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=mrFprLeK2gbRs99t4neV6Q%3D%3D&amp;campus=sinchonMed" title="김명화 자세히보기">
+                                 
+                        
+
+		              
+		              	김명화
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Myoung Hwa Kim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>부교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:KMH2050@YUHS.AC" title="메일 보내기">KMH2050@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=mrFprLeK2gbRs99t4neV6Q%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=XkTFMWHx4f9g33xMOujNng%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김민수 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=XkTFMWHx4f9g33xMOujNng%3D%3D&amp;campus=sinchonMed" title="김민수 자세히보기">
+                                 
+                        
+
+		              
+		              	김민수
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Min Soo Kim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:KMSVIOLA@YUHS.AC" title="메일 보내기">KMSVIOLA@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=XkTFMWHx4f9g33xMOujNng%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=%2BDL5CVCZTpGXTFNC328lCg%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김소연 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=%2BDL5CVCZTpGXTFNC328lCg%3D%3D&amp;campus=sinchonMed" title="김소연 자세히보기">
+                                 
+                        
+
+		              
+		              	김소연
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        so yeon Kim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:KIMSY326@YUHS.AC" title="메일 보내기">KIMSY326@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=%2BDL5CVCZTpGXTFNC328lCg%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=VOxFk3OGOzJXIKWZx3A75Q%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김승현 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=VOxFk3OGOzJXIKWZx3A75Q%3D%3D&amp;campus=sinchonMed" title="김승현 자세히보기">
+                                 
+                        
+
+		              
+		              	김승현
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        SEUNGHYUN KIM	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>부교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:ANESSHKIM@YUHS.AC" title="메일 보내기">ANESSHKIM@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=VOxFk3OGOzJXIKWZx3A75Q%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=5DFuYahEnFE8587uHYMqIA%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김신형 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=5DFuYahEnFE8587uHYMqIA%3D%3D&amp;campus=sinchonMed" title="김신형 자세히보기">
+                                 
+                        
+
+		              
+		              	김신형
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Shin Hyung Kim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:TESSAR@YUHS.AC" title="메일 보내기">TESSAR@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=5DFuYahEnFE8587uHYMqIA%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=Du0Lp%2F1NGmyNjPgQ5%2FWh5g%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김은정 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=Du0Lp%2F1NGmyNjPgQ5%2FWh5g%3D%3D&amp;campus=sinchonMed" title="김은정 자세히보기">
+                                 
+                        
+
+		              
+		              	김은정
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Eun Jung Kim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>부교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:NATLIS@YUHS.AC" title="메일 보내기">NATLIS@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=Du0Lp%2F1NGmyNjPgQ5%2FWh5g%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=6mdpWpR%2FYeq%2FVcVGrHCnuw%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김정민 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=6mdpWpR%2FYeq%2FVcVGrHCnuw%3D%3D&amp;campus=sinchonMed" title="김정민 자세히보기">
+                                 
+                        
+
+		              
+		              	김정민
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Jeongmin Kim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:ANESJEONGMIN@YUHS.AC" title="메일 보내기">ANESJEONGMIN@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=6mdpWpR%2FYeq%2FVcVGrHCnuw%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=maH10p5MSjbmv3nvziw%2BCA%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김지영 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=maH10p5MSjbmv3nvziw%2BCA%3D%3D&amp;campus=sinchonMed" title="김지영 자세히보기">
+                                 
+                        
+
+		              
+		              	김지영
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        JiYoung Kim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:KIMJY@YUHS.AC" title="메일 보내기">KIMJY@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=maH10p5MSjbmv3nvziw%2BCA%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=t%2BgtzCzRokOFTpl1UQEriA%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김현주 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=t%2BgtzCzRokOFTpl1UQEriA%3D%3D&amp;campus=sinchonMed" title="김현주 자세히보기">
+                                 
+                        
+
+		              
+		              	김현주
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Hyun Joo Kim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:JJOLLONG@YUHS.AC" title="메일 보내기">JJOLLONG@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=t%2BgtzCzRokOFTpl1UQEriA%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김현창 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	김현창
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		Hyun-Chang	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>부교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김혜진 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	김혜진
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		Hye jin	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>조교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김희정 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	김희정
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		Hee jung	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>조교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=G%2BuBHJV7poLG8WdjPmZF5Q%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="나성원 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=G%2BuBHJV7poLG8WdjPmZF5Q%3D%3D&amp;campus=sinchonMed" title="나성원 자세히보기">
+                                 
+                        
+
+		              
+		              	나성원
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Na Sungwon	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:NSWKSJ@YUHS.AC" title="메일 보내기">NSWKSJ@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=G%2BuBHJV7poLG8WdjPmZF5Q%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="박선경 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	박선경
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		Sun-Kyung	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>조교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="박수정 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	박수정
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		SooJung	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>조교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=tS7YJFqOflw7r4jrScnJJg%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="박진하 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=tS7YJFqOflw7r4jrScnJJg%3D%3D&amp;campus=sinchonMed" title="박진하 자세히보기">
+                                 
+                        
+
+		              
+		              	박진하
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Jin Ha Park	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>부교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:REALSUMMER@YUHS.AC" title="메일 보내기">REALSUMMER@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=tS7YJFqOflw7r4jrScnJJg%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="배명일 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	배명일
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		Myung Il	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>조교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=ht03IFQfJif3HwYf5oav4Q%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="변효진 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=ht03IFQfJif3HwYf5oav4Q%3D%3D&amp;campus=sinchonMed" title="변효진 자세히보기">
+                                 
+                        
+
+		              
+		              	변효진
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        HYO JIN BYON	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:JINOBEN@YUHS.AC" title="메일 보내기">JINOBEN@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=ht03IFQfJif3HwYf5oav4Q%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=vD%2FQgRQOWHHUp2CSUJsH3Q%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="소사라 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=vD%2FQgRQOWHHUp2CSUJsH3Q%3D%3D&amp;campus=sinchonMed" title="소사라 자세히보기">
+                                 
+                        
+
+		              
+		              	소사라
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Sarah Soh	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>부교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:YEONCHOO@YUHS.AC" title="메일 보내기">YEONCHOO@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=vD%2FQgRQOWHHUp2CSUJsH3Q%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=dIXsxpxoNZxogOxQfOMtdw%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="송영 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=dIXsxpxoNZxogOxQfOMtdw%3D%3D&amp;campus=sinchonMed" title="송영 자세히보기">
+                                 
+                        
+
+		              
+		              	송영
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Young Song	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:NEARMYHEART@YUHS.AC" title="메일 보내기">NEARMYHEART@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=dIXsxpxoNZxogOxQfOMtdw%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=JL4Q65nA6IBkJBuk2J0ePQ%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="송종욱 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=JL4Q65nA6IBkJBuk2J0ePQ%3D%3D&amp;campus=sinchonMed" title="송종욱 자세히보기">
+                                 
+                        
+
+		              
+		              	송종욱
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        jong wook song	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:SJW72331@YUHS.AC" title="메일 보내기">SJW72331@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=JL4Q65nA6IBkJBuk2J0ePQ%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=08P74qiyKjGggi6%2B4X3lsQ%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="신서경 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=08P74qiyKjGggi6%2B4X3lsQ%3D%3D&amp;campus=sinchonMed" title="신서경 자세히보기">
+                                 
+                        
+
+		              
+		              	신서경
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Seo Kyung Shin	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:SKSHIN@YUHS.AC" title="메일 보내기">SKSHIN@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=08P74qiyKjGggi6%2B4X3lsQ%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=hW6x5vWDOmD7zMDoB5XF%2Fw%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="심연희 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=hW6x5vWDOmD7zMDoB5XF%2Fw%3D%3D&amp;campus=sinchonMed" title="심연희 자세히보기">
+                                 
+                        
+
+		              
+		              	심연희
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        yon hee shim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:TREN125@YUHS.AC" title="메일 보내기">TREN125@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=hW6x5vWDOmD7zMDoB5XF%2Fw%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=TwoMp2LJQuaFxt2Bef8Olw%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="심재광 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=TwoMp2LJQuaFxt2Bef8Olw%3D%3D&amp;campus=sinchonMed" title="심재광 자세히보기">
+                                 
+                        
+
+		              
+		              	심재광
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Jae-Kwang Shim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:ANESHIM@YUHS.AC" title="메일 보내기">ANESHIM@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=TwoMp2LJQuaFxt2Bef8Olw%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=XT3fMzJ5ya8Ps50TkSwzBw%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="오영준 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=XT3fMzJ5ya8Ps50TkSwzBw%3D%3D&amp;campus=sinchonMed" title="오영준 자세히보기">
+                                 
+                        
+
+		              
+		              	오영준
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Young Jun Oh	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:YJOH@YUHS.AC" title="메일 보내기">YJOH@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=XT3fMzJ5ya8Ps50TkSwzBw%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=xw8lO4Fu6TrLJbIvB3RbaA%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="유영철 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=xw8lO4Fu6TrLJbIvB3RbaA%3D%3D&amp;campus=sinchonMed" title="유영철 자세히보기">
+                                 
+                        
+
+		              
+		              	유영철
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        young chul Yoo	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:SEAOYSTER@YUHS.AC" title="메일 보내기">SEAOYSTER@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=xw8lO4Fu6TrLJbIvB3RbaA%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="이규호 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	이규호
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		Kyuho	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>조교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=vmbO1A1OQydZfh3Dp4tjxQ%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="이보라 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=vmbO1A1OQydZfh3Dp4tjxQ%3D%3D&amp;campus=sinchonMed" title="이보라 자세히보기">
+                                 
+                        
+
+		              
+		              	이보라
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Bo Ra Lee	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>부교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:DREAMKAIST@YUHS.AC" title="메일 보내기">DREAMKAIST@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=vmbO1A1OQydZfh3Dp4tjxQ%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=YtwpbINvBLOca5M2in%2BHuA%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="이재훈 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=YtwpbINvBLOca5M2in%2BHuA%3D%3D&amp;campus=sinchonMed" title="이재훈 자세히보기">
+                                 
+                        
+
+		              
+		              	이재훈
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Jae Hoon Lee	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:NEOGENS@YUHS.AC" title="메일 보내기">NEOGENS@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=YtwpbINvBLOca5M2in%2BHuA%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=0YPMTL1lEGrkp7GKJdhc8A%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="장철호 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=0YPMTL1lEGrkp7GKJdhc8A%3D%3D&amp;campus=sinchonMed" title="장철호 자세히보기">
+                                 
+                        
+
+		              
+		              	장철호
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Chul Ho Chang	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:ANEZZANG@YUHS.AC" title="메일 보내기">ANEZZANG@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=0YPMTL1lEGrkp7GKJdhc8A%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=N3D1DiKrBXT2SssT5gPPnw%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="조진선 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=N3D1DiKrBXT2SssT5gPPnw%3D%3D&amp;campus=sinchonMed" title="조진선 자세히보기">
+                                 
+                        
+
+		              
+		              	조진선
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Jin Sun Cho	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:CHJS0214@YUHS.AC" title="메일 보내기">CHJS0214@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=N3D1DiKrBXT2SssT5gPPnw%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=S%2B9TbsKzBKhw18SxUm3hhQ%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="최승호 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=S%2B9TbsKzBKhw18SxUm3hhQ%3D%3D&amp;campus=sinchonMed" title="최승호 자세히보기">
+                                 
+                        
+
+		              
+		              	최승호
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        SEUNGHO CHOI	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:CSHO99@YUHS.AC" title="메일 보내기">CSHO99@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=S%2B9TbsKzBKhw18SxUm3hhQ%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=whhUdVSsPZ26OOCIlx7zAw%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="최용선 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=whhUdVSsPZ26OOCIlx7zAw%3D%3D&amp;campus=sinchonMed" title="최용선 자세히보기">
+                                 
+                        
+
+		              
+		              	최용선
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Yong Seon Choi	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:YSCHOI@YUHS.AC" title="메일 보내기">YSCHOI@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=whhUdVSsPZ26OOCIlx7zAw%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=p3bkHeWhknhhT7jpOQ6Knw%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="한동우 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=p3bkHeWhknhhT7jpOQ6Knw%3D%3D&amp;campus=sinchonMed" title="한동우 자세히보기">
+                                 
+                        
+
+		              
+		              	한동우
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Han DongWoo	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:HANESTH@YUHS.AC" title="메일 보내기">HANESTH@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=p3bkHeWhknhhT7jpOQ6Knw%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=ljtTtbTzIjvd%2Blq241mLjQ%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="함성연 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=ljtTtbTzIjvd%2Blq241mLjQ%3D%3D&amp;campus=sinchonMed" title="함성연 자세히보기">
+                                 
+                        
+
+		              
+		              	함성연
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Sung Yeon Ham	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Anesthesiology and Pain Medicine</span>/<span>부교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:SYID0424@YUHS.AC" title="메일 보내기">SYID0424@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=ljtTtbTzIjvd%2Blq241mLjQ%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+				
+		 	</div>
+		 	
+		 	
+		 </div>
+	
+
+
+
+
+
+</div>
+		<div class="board-wrap"></div>
+	</div>
+	<footer>
+<div class="footer-wrap">
+    <div class="foot-box">
+        <div class="foot-top-box"><img src="/_res/faculty/img/common/logo_foot.gif" alt="연세대학교 교원정보"></div>
+        <div class="foot-bottom-box">
+            <ul class="footer-rule">
+              <li>
+				<a href="/faculty/privacy.jsp" title="개인정보처리방침 자세히 보기"><b>개인정보처리방침</b></a></li>
+                <!-- <a href="/faculty/privacy.jsp" title="개인정보처리방침 자세히 보기">Privacy Policy</a></li> -->
+              <li>
+				<a href="/faculty/legal_notice.jsp" title="법적고지 자세히 보기">법적고지</a></li>
+                <!-- <a href="/faculty/legal_notice.jsp" title="법적고지 자세히 보기">Legal Notice</a></li> -->
+            </ul>
+            <ul class="footer-adrress">
+                <li>Yonsei University (50 Yonsei-ro Seodaemun-gu, Seoul, 03722, Republic of Korea) <span>Tel : 02-1599-1885</span></li>
+                <li>COPYRIGHT (C) 2017 YONSEI UNIVERSITY. ALL RIGHTS RESERVED.</li>
+            </ul>
+       </div>
+      </div>
+  </div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-125037584-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125037584-1');
+</script>
+</footer>
+</div>
+<noscript><p>이 사이트는 자바스크립트를 지원하지 않으면 정상적으로 보이지 않을수 있습니다.</p></noscript>
+
+</body></html>

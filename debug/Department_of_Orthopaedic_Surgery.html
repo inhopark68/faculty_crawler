@@ -1,0 +1,2536 @@
+<html lang="ko"><head>
+<title>연세대학교 교원정보 시스템 | 소속검색 | All</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
+<meta http-equiv="Content-Style-Type" content="text/css">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<link rel="canonical" href="https://ee.yonsei.ac.kr/faculty/depMember.do"><link rel="shortcut icon" href="/_res/board/etc/favicon.ico">
+
+<link rel="stylesheet" type="text/css" href="/_common/cms.css">
+<link rel="stylesheet" type="text/css" href="/_res/faculty/_css/layout.css">
+<!--[if IE 8]>
+	<link rel="stylesheet" type="text/css" href="/_common/ie8.css" />
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="/_common/css/toastr.css">
+<link rel="stylesheet" type="text/css" href="/_common/css/ui.datepicker.css">
+<link rel="stylesheet" type="text/css" href="/_custom/yonseidep/_app/member_search/css/member.css">
+
+<link rel="stylesheet" type="text/css" href="/_res/faculty/_css/user.css">
+
+<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-Y29BRTS4RG&amp;cx=c&amp;gtm=4e63p1"></script><script type="text/javascript" src="/_common/js/jquery/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="/_common/js/jquery/jquery-ui-1.11.4.min.js"></script>
+
+<script type="text/javascript">
+//<![CDATA[
+	var _thisHost = location.protocol+'//'+location.host, _thisUrl = document.location.href,_so_ = false,_cur_menu_cd = '461',_edit_content = false,front_page_edit = true,zooInOutMode = 'font',_reouscePath = '/_res/faculty/',editorVendor = 'froala',sslYN = 'N',sslPort = '8443',servicePort = '',developMode = false,device='pc',isMobile=false,_cfgUseDevMode = false,_siteId = 'faculty',printSelector = '#jwxe_main_content',ctx = '',rootPath = '',locale= 'ko',localeScriptPath='/_custom/yonseidep/resource/js/';
+//]]>
+</script>
+
+<script type="text/javascript" src="/_common/cms.js"></script><style type="text/css"></style><script type="text/javascript" src="/_common/js/control.js"></script>
+<script type="text/javascript" src="/_common/js/toastr.js"></script>
+<script type="text/javascript" src="/_common/js/datepicker/ui.datepicker.all.js"></script>
+
+<script type="text/javascript" src="/_res/faculty/_js/user.js"></script>
+
+
+	<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		document.querySelectorAll('img').forEach((img) => {
+			img.addEventListener('contextmenu', (event) => {
+				event.preventDefault();
+			});
+		});
+	});
+	</script>
+	<style>
+		/* 드래그 방지 */
+		img {
+			user-select: none; /* 텍스트 선택 방지 */
+			-webkit-user-drag: none; /* 이미지 드래그 방지 (크롬) */
+			-moz-user-drag: none; /* 이미지 드래그 방지 (파이어폭스) */
+			-ms-user-drag: none; /* 이미지 드래그 방지 (엣지) */
+			user-drag: none; /* 이미지 드래그 방지 (표준) */
+		}
+	</style>
+
+<style type="text/css" media="print">.dropShadow{visibility:hidden;}</style></head>
+<body id="item_body" class="pc">
+<ul id="go_main">
+	<li><a href="#jwxe_main_content">본문 바로가기</a></li>
+	
+	
+</ul>
+
+
+<header>
+<div class="header-wrap">
+	<div class="header-box">
+		<h1 class="header-h1">
+          <a href="/faculty/index.do"><img alt="연세대학교" src="/_res/faculty/img/common/logo_header.png"></a>
+        </h1>
+        <div class="header-top-btn-wrap">
+          
+           
+          
+            <a class="login-btn" href="/faculty/login.do" title="로그인">Login</a> 
+          
+          
+        </div>
+      
+		<div class="search-wrap">
+			<h2>
+				연세대학교 교원정보 | Yonsei Faculty Information </h2>
+          <form action="/faculty/member.do" method="get" onsubmit="return beforeSubmit()">
+				<fieldset>
+					<legend class="hide" title="통합검색">통합검색</legend>
+					<div class="search-input-zone">
+                      <label class="hide" for="srSearchVal">통합검색 단어 입력 </label>
+                      <input class="search-input" id="srSearchVal" name="srSearchVal" type="text" placeholder="Enter Search Name Here..." value="">
+                      <input alt="검색" class="search-btn" src="/_res/faculty/img/common/btn_search.gif" type="image" value="검색">
+                  </div>
+				</fieldset>
+			</form>
+			<div class="search-tab-wrap">
+              <a href="/faculty/name_search.do" title="이름검색 바로가기">Name</a>
+              <a href="/faculty/dep_search.do" title="소속검색 바로가기">Department</a></div>
+		</div>
+	</div>
+</div>
+</header>
+<div class="container">
+	<div class="search-option-wrap"></div>
+	<div class="content" id="jwxe_main_content">
+		<div class="tab-wrap"></div>
+		<div class="belong-wrap">
+
+
+
+
+
+
+
+
+ 
+
+ 
+	
+
+
+
+
+
+
+
+
+
+<!-- 교원정보 검색 - 학과 검색 -->
+
+
+
+		<div class="content-box  ">
+		  	<div class="pro-list-navi-box abc">
+		    	<p>
+		    	
+		    	
+		    	
+		    		<span class="dep01">서울 캠퍼스 <br> Seoul Campus</span>
+		    	
+
+		    	
+                  
+                    
+                  
+                    <span class="dep01">의과대학 <br> College of Medicine</span>
+                  
+                  
+		    	
+
+                
+                  
+                
+                   <span class="dep01">정형외과학교실 <br> Department of Orthopaedic Surgery </span>
+                
+                
+		    	</p>
+		  	</div>
+			<div class="pro-list">
+              
+			 
+			 
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=Mg1p47E7e6EKGI8qGUVrFw%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="권혁민 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=Mg1p47E7e6EKGI8qGUVrFw%3D%3D&amp;campus=sinchonMed" title="권혁민 자세히보기">
+                                 
+                        
+
+		              
+		              	권혁민
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Hyuck Min Kwon	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>부교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:HYUCK7777@YUHS.AC" title="메일 보내기">HYUCK7777@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=Mg1p47E7e6EKGI8qGUVrFw%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=%2BfKcoNjfjW6ILHek8UYLwQ%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+							  <img alt="김성환 프로필사진" src="/profileImg/thumb_76fdf04c86d87a4f80e685f1409bc40b.png">
+						  
+						  
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=%2BfKcoNjfjW6ILHek8UYLwQ%3D%3D&amp;campus=sinchonMed" title="김성환 자세히보기">
+                                 
+                        
+
+		              
+		              	김성환
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Sung-Hwan Kim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:ORTHOHWAN@YUHS.AC" title="메일 보내기">ORTHOHWAN@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=%2BfKcoNjfjW6ILHek8UYLwQ%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=JMIXFeszadXQwlMm%2BxjDtg%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김승현 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=JMIXFeszadXQwlMm%2BxjDtg%3D%3D&amp;campus=sinchonMed" title="김승현 자세히보기">
+                                 
+                        
+
+		              
+		              	김승현
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Seung Hyun Kim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>부교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:SSEUNGHK@YUHS.AC" title="메일 보내기">SSEUNGHK@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=JMIXFeszadXQwlMm%2BxjDtg%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=tF3NAlzGiuLBUPXbb83Omg%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김학선 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=tF3NAlzGiuLBUPXbb83Omg%3D%3D&amp;campus=sinchonMed" title="김학선 자세히보기">
+                                 
+                        
+
+		              
+		              	김학선
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        HAK SUN KIM	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:HAKSUNKIM@YUHS.AC" title="메일 보내기">HAKSUNKIM@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=tF3NAlzGiuLBUPXbb83Omg%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=cvDov81i90N6i35yP8QInA%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="김현우 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=cvDov81i90N6i35yP8QInA%3D%3D&amp;campus=sinchonMed" title="김현우 자세히보기">
+                                 
+                        
+
+		              
+		              	김현우
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Hyun Woo Kim	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:PEDHKIM@YUHS.AC" title="메일 보내기">PEDHKIM@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=cvDov81i90N6i35yP8QInA%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=mS%2Fk8dob6U38hoM35pCbKw%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="문성환 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=mS%2Fk8dob6U38hoM35pCbKw%3D%3D&amp;campus=sinchonMed" title="문성환 자세히보기">
+                                 
+                        
+
+		              
+		              	문성환
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        seong hwan moon	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:SHMOON@YUHS.AC" title="메일 보내기">SHMOON@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=mS%2Fk8dob6U38hoM35pCbKw%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="문현수 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	문현수
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		Hyunsoo	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>조교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=qd5c%2F6sczOVl%2FUO6nKw6CA%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="박건보 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=qd5c%2F6sczOVl%2FUO6nKw6CA%3D%3D&amp;campus=sinchonMed" title="박건보 자세히보기">
+                                 
+                        
+
+		              
+		              	박건보
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Kunbo Park	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:PEDOSKBP@YUHS.AC" title="메일 보내기">PEDOSKBP@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=qd5c%2F6sczOVl%2FUO6nKw6CA%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="박경현 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	박경현
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		Kyeong-Hyeon	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>부교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=ESwwSBsVuLWnaoYEsfPJ%2FA%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="박관규 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=ESwwSBsVuLWnaoYEsfPJ%2FA%3D%3D&amp;campus=sinchonMed" title="박관규 자세히보기">
+                                 
+                        
+
+		              
+		              	박관규
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Kwan Kyu Park	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:KKPARK@YUHS.AC" title="메일 보내기">KKPARK@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=ESwwSBsVuLWnaoYEsfPJ%2FA%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="박광환 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	박광환
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		Kwang Hwan	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>부교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="박시영 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	박시영
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		SI YOUNG	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="박영창 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	박영창
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		Young Chang	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>조교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=m515atjnh9%2Fx7HuQy08YvA%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="박진오 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=m515atjnh9%2Fx7HuQy08YvA%3D%3D&amp;campus=sinchonMed" title="박진오 자세히보기">
+                                 
+                        
+
+		              
+		              	박진오
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        JIN OH PARK	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:PARKJO@YUHS.AC" title="메일 보내기">PARKJO@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=m515atjnh9%2Fx7HuQy08YvA%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=u8ZZWohwxhe1oMKfa9FElA%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="박훈 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=u8ZZWohwxhe1oMKfa9FElA%3D%3D&amp;campus=sinchonMed" title="박훈 자세히보기">
+                                 
+                        
+
+		              
+		              	박훈
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        HOON PARK	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:HOONDENG@YUHS.AC" title="메일 보내기">HOONDENG@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=u8ZZWohwxhe1oMKfa9FElA%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=%2Fo7PLL5%2BZ%2BYXaZQ5ZULvvQ%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="석경수 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=%2Fo7PLL5%2BZ%2BYXaZQ5ZULvvQ%3D%3D&amp;campus=sinchonMed" title="석경수 자세히보기">
+                                 
+                        
+
+		              
+		              	석경수
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Kyung-Soo Suk	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:SKS111@YUHS.AC" title="메일 보내기">SKS111@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=%2Fo7PLL5%2BZ%2BYXaZQ5ZULvvQ%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=kGyCam6Xjv15fpTeYvparA%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="오원택 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=kGyCam6Xjv15fpTeYvparA%3D%3D&amp;campus=sinchonMed" title="오원택 자세히보기">
+                                 
+                        
+
+		              
+		              	오원택
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Wontaek Oh	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>부교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:OWONT@YUHS.AC" title="메일 보내기">OWONT@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=kGyCam6Xjv15fpTeYvparA%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="이병호 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	이병호
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		Byung Ho	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=d393yxTAexCclbmMSY%2BBrQ%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="이진우 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=d393yxTAexCclbmMSY%2BBrQ%3D%3D&amp;campus=sinchonMed" title="이진우 자세히보기">
+                                 
+                        
+
+		              
+		              	이진우
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        jin woo lee	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:LJWOS@YUHS.AC" title="메일 보내기">LJWOS@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=d393yxTAexCclbmMSY%2BBrQ%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="임준열 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	임준열
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		Joon Ryul	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>조교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="정광호 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	정광호
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		Kwangho	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>조교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=BSAJl8SWeW7CbLEMJ%2B8w1Q%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="정민 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=BSAJl8SWeW7CbLEMJ%2B8w1Q%3D%3D&amp;campus=sinchonMed" title="정민 자세히보기">
+                                 
+                        
+
+		              
+		              	정민
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        min Jung	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:JMIN1103@YUHS.AC" title="메일 보내기">JMIN1103@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=BSAJl8SWeW7CbLEMJ%2B8w1Q%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  
+		          
+		          <span class="pro-info-img">
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="조병우 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          
+		          </span>
+		          
+		          <dl>
+		              <dt>
+		              
+		              	조병우
+		              	<span>
+		              		
+                      	  	 <!-- 정보수정 이력이 없으면 학사에서 가져온 정보  -->
+                          		Byung Woo	
+                          	
+		              	</span>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>조교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:" title="메일 보내기"></a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=bbemwwOgqgLEUGrh0mgyoA%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="최윤락 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=bbemwwOgqgLEUGrh0mgyoA%3D%3D&amp;campus=sinchonMed" title="최윤락 자세히보기">
+                                 
+                        
+
+		              
+		              	최윤락
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        YUN-RAK CHOI	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:YRCHOI@YUHS.AC" title="메일 보내기">YRCHOI@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=bbemwwOgqgLEUGrh0mgyoA%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+
+				
+				
+
+				<div class="pro-info-box">
+					
+				  	
+                    
+                    
+                      <a class="pro-info-img" href="?mode=view&amp;userId=d04EIVC8zmL%2BtS2XVDV7Gg%3D%3D&amp;campus=sinchonMed">
+                             
+                    
+                    
+		          
+		          
+		          	
+						  
+						  
+						  
+							  
+							  
+							  <img alt="한승환 프로필사진" src="/_res/faculty/img/common/img_faculty_default.jpg">
+						  
+					
+			      
+		          </a>
+		          
+		          
+		          <dl>
+		              <dt>
+		                            
+                        
+                        
+                            <a href="?mode=view&amp;userId=d04EIVC8zmL%2BtS2XVDV7Gg%3D%3D&amp;campus=sinchonMed" title="한승환 자세히보기">
+                                 
+                        
+
+		              
+		              	한승환
+		              	<span>
+		              		 <!-- 정보수정 이력이 있으면 추가정보에서 영어이름정보를 불러온다. -->
+		                        Seung Hwan Han	
+                          	
+                      	  	
+		              	</span>
+		              	
+		              </a>
+		              
+		              </dt>
+		              <dd class="pro-position">
+		              	<span>	
+                        <!-- dep.erpWerks Y000 : 서울 캠퍼스, Y100&M000 : 신촌 의료원, Y200 : 미래 캠퍼스, Y300 : 원주 의료원  -->
+                          
+                              Seoul Campus
+		              	
+                          
+		              	</span>
+		              </dd>
+		              <dd class="pro-position">
+		                  <span>Department of Orthopaedic Surgery </span>/<span>교수</span></dd>
+		              <dd class="pro-info-etc">
+		                  <ul>
+		                      <li>
+
+		                           <!-- 정보수정 이력이 있으면 추가정보에서 이메일정보를 불러온다. -->
+                                    	<a href="mailto:OSMEDIC@YUHS.AC" title="메일 보내기">OSMEDIC@YUHS.AC</a>
+		                          
+		                      	  	
+		                      </li>
+		                      <li>
+                                    
+                                      
+                                     
+                                      
+                                      
+                                      
+                                      
+                                      
+                                      
+                                    
+		                      </li>
+		                      <li>
+								  
+		                      </li>
+		                  </ul>
+		              </dd>
+		          </dl>
+                                
+
+              
+                    
+                      <a href="?mode=view&amp;userId=d04EIVC8zmL%2BtS2XVDV7Gg%3D%3D&amp;campus=sinchonMed" title="more" class="pro-info-more">more +</a>
+                             
+                    
+              
+
+                                
+		      </div>
+		      
+			
+				
+		 	</div>
+		 	
+		 	
+		 </div>
+	
+
+
+
+
+
+</div>
+		<div class="board-wrap"></div>
+	</div>
+	<footer>
+<div class="footer-wrap">
+    <div class="foot-box">
+        <div class="foot-top-box"><img src="/_res/faculty/img/common/logo_foot.gif" alt="연세대학교 교원정보"></div>
+        <div class="foot-bottom-box">
+            <ul class="footer-rule">
+              <li>
+				<a href="/faculty/privacy.jsp" title="개인정보처리방침 자세히 보기"><b>개인정보처리방침</b></a></li>
+                <!-- <a href="/faculty/privacy.jsp" title="개인정보처리방침 자세히 보기">Privacy Policy</a></li> -->
+              <li>
+				<a href="/faculty/legal_notice.jsp" title="법적고지 자세히 보기">법적고지</a></li>
+                <!-- <a href="/faculty/legal_notice.jsp" title="법적고지 자세히 보기">Legal Notice</a></li> -->
+            </ul>
+            <ul class="footer-adrress">
+                <li>Yonsei University (50 Yonsei-ro Seodaemun-gu, Seoul, 03722, Republic of Korea) <span>Tel : 02-1599-1885</span></li>
+                <li>COPYRIGHT (C) 2017 YONSEI UNIVERSITY. ALL RIGHTS RESERVED.</li>
+            </ul>
+       </div>
+      </div>
+  </div>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-125037584-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125037584-1');
+</script>
+</footer>
+</div>
+<noscript><p>이 사이트는 자바스크립트를 지원하지 않으면 정상적으로 보이지 않을수 있습니다.</p></noscript>
+
+</body></html>

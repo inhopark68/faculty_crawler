@@ -1,0 +1,31 @@
+{
+  "sources": [
+    {
+      "name": "college_of_medicine",
+      "base_url": "https://medicine.yonsei.ac.kr/medicine/index.do#",
+      "search_paths": [
+        "/medicine/board/search.do?searchKeyword={query}",
+        "/search/search.do?query={query}",
+        "/search?query={query}"
+      ]
+    },
+    {
+      "name": "severance_hospital_ko",
+      "base_url": "https://sev.severance.healthcare/sev/index.do",
+      "search_paths": [
+        "/search/search.do?query={query}",
+        "/search/result.do?keyword={query}",
+        "/search?query={query}"
+      ]
+    },
+    {
+      "name": "severance_hospital_en",
+      "base_url": "https://sev.severance.healthcare/sev-en/index.do",
+      "search_paths": [
+        "/search/search.do?query={query}",
+        "/search/result.do?keyword={query}",
+        "/search?query={query}"
+      ]
+    }
+  ]
+}
